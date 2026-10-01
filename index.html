@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainJet | Advanced Multi-Modal Dashboard</title>
+    <script src="https://tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#0f172a',
+                        cardDark: '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen font-sans transition-colors duration-200">
+
+    <!-- Navigation Header -->
+    <nav class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 p-4 sticky top-0 z-50 shadow-sm transition-colors duration-200">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-2 rounded-xl text-white font-bold text-xl tracking-wider shadow-md">BJ</div>
+                <span class="text-xl font-bold tracking-tight">BrainJet <span class="text-blue-500 text-xs font-semibold">v3.5 Network</span></span>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <!-- Theme Toggle Icon Button -->
+                <button id="themeToggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 transition duration-200" title="Toggle Live Dashboard Theme">
+                    <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
+                </button>
+                <input type="password" id="apiKey" placeholder="User API Key (Optional if Master Key Set)" class="bg-slate-100 dark:bg-slate-700 text-sm rounded-lg px-3 py-2 border border-slate-300 dark:border-slate-600 focus:outline-none focus:border-blue-500 w-44 md:w-64 text-slate-900 dark:text-white">
+            </div>
+        </div>
+    </nav>
+
+    <!-- App Dashboard Core Grid Workspace Layout -->
+    <main class="max-w-7xl mx-auto p-4 md:p-6 grid grid-cols-1 lg:grid-cols-4 gap-6">
+        
+        <!-- Sidebar Controls & Commercial Layout Panels -->
+        <div class="lg:col-span-1 space-y-6">
+            <!-- Nostoc Exclusive Administration Authority Panel -->
+            <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-5 rounded-2xl border border-slate-700 shadow-xl relative overflow-hidden">
+                <div class="absolute -right-6 -bottom-6 opacity-10">
+                    <i class="fa-solid fa-crown text-8xl"></i>
+                </div>
+                <h3 class="text-xs uppercase font-bold tracking-widest text-blue-400 mb-1">Network Authority</h3>
+                <h2 class="text-xl font-black tracking-tight text-white mb-2">Owner: Nostoc</h2>
+                <p class="text-xs text-slate-400 mb-4">For software white-label setups, custom feature extensions, or license management queries, contact the admin directly.</p>
+                <a href="https://t.me" target="_blank" class="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-md w-full justify-center">
+                    <i class="fa-brands fa-telegram text-base"></i>
+                    <span>Contact PM: @Nostoc102</span>
+                </a>
+            </div>
+
+            <!-- Configuration Inputs Menu -->
+            <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xl transition-colors duration-200">
+                <h2 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center"><i class="fa-solid fa-wand-magic-sparkles text-blue-500 mr-2"></i> Creation Panel</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider font-bold mb-2">Output Mode Goal</label>
+                        <select id="contentGoal" class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl p-3 text-sm focus:outline-none focus:border-blue-500 font-medium">
+                            <option value="image_meme">🖼️ Live Image Meme Sandbox Generation</option>
+                            <option value="video_script">🎬 Video Concept & High-Retention Scripting</option>
+                            <option value="viral_campaign">🚀 Full Cross-Platform Engagement Pack</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider font-bold mb-2">Content Target Topic</label>
+                        <textarea id="topicInput" rows="4" placeholder="Type what you want your post or video to be about..." class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl p-3 text-sm focus:outline-none focus:border-blue-500 placeholder-slate-400 dark:placeholder-slate-500 text-slate-900 dark:text-white font-medium"></textarea>
+                    </div>
+
+                    <button id="generateBtn" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3.5 px-4 rounded-xl transition duration-200 flex items-center justify-center space-x-2 shadow-lg">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>Ignite Core Core</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Passive Monetization Network Slot (Owner Banner Ads Integration) -->
+            <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-2xl border border-slate-300 dark:border-slate-700 text-center min-h-[180px] flex flex-col items-center justify-center relative transition-colors duration-200">
+                
+                <!-- PLACE YOUR EMBEDDED ADS SCRIPT CODE DIRECTLY HERE -->
+                <div class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">
+                    <i class="fa-solid fa-rectangle-ad mr-1"></i> Ad Network Monetization Slot
+                </div>
+                <p class="text-[10px] text-slate-400 dark:text-slate-500 max-w-[180px] mx-auto mb-2">
+                    Traffic placement producing programmatic ad banner impressions converting to real money for Nostoc.
+                </p>
+                <div class="w-full h-12 bg-slate-200 dark:bg-slate-900 rounded border border-dashed border-slate-400 dark:border-slate-600 flex items-center justify-center text-[10px] text-slate-400">
+                    [Network Script Code Container Location]
+                </div>
+                <!-- ADVERT FOOTER COMPONENT SLOT -->
+
+            </div>
+        </div>
+
+        <!-- Right Panel: Visual & Textual Content Outputs Workspace -->
+        <div class="lg:col-span-3 space-y-6">
+            
+            <!-- Sandbox Canvas Window for Rendering Interactive Meme Assets -->
+            <div id="canvasSection" class="hidden bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xl p-5 transition-colors duration-200">
+                <h3 class="text-sm font-semibold mb-3 flex items-center"><i class="fa-solid fa-image text-indigo-500 mr-2"></i> Live Image Meme Generator Studio</h3>
+                <div class="flex flex-col items-center justify-center bg-slate-100 dark:bg-slate-900 p-6 rounded-xl border border-dashed border-slate-300 dark:border-slate-700 min-h-[320px]">
+                    <div id="memePreviewBox" class="relative max-w-sm w-full bg-white dark:bg-slate-800 shadow-2xl rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 flex flex-col">
+                        <div id="memeTopText" class="p-3 bg-white dark:bg-slate-800 text-center font-bold text-base md:text-lg tracking-tight text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-700 uppercase">Top Caption Text</div>
+                        <div class="bg-slate-200 dark:bg-slate-950 aspect-video w-full flex items-center justify-center text-center p-4 relative">
+                            <i class="fa-solid fa-photo-film text-4xl text-slate-400 dark:text-slate-700"></i>
+                        </div>
+                        <div id="memeBottomText" class="p-3 bg-white dark:bg-slate-800 text-center font-bold text-base md:text-lg tracking-tight text-slate-900 dark:text-white border-t border-slate-100 dark:border-slate-700 uppercase">Bottom Catalyst Prompt</div>
+                    </div>
+                    <button id="downloadMemeBtn" class="mt-4 px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-lg text-xs font-semibold tracking-wide transition flex items-center"><i class="fa-solid fa-file-arrow-down mr-1.5"></i> Export Render Canvas</button>
+                </div>
+            </div>
+
+            <!-- Standard Script Blueprint Data Array Window -->
+            <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xl min-h-[400px] flex flex-col transition-colors duration-200">
+                <div class="border-b border-slate-200 dark:border-slate-700 p-4 flex justify-between items-center bg-slate-50 dark:bg-slate-850 rounded-t-2xl">
+                    <span class="text-sm font-semibold text-slate-600 dark:text-slate-300 flex items-center"><i class="fa-solid fa-code text-blue-500 mr-2"></i> Structured Strategic Output Blueprint</span>
